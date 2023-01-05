@@ -7,3 +7,7 @@ npm install typescript --save-dev
 npx tsc
 
 opened index.ts
+
+Shchar
+tsc --init
+update tsconfig
