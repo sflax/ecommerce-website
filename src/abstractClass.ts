@@ -14,7 +14,7 @@ export abstract class AbstractCacheAlgo<K, V> implements ICacheAlgo<K, V> {
     //if we decide to keep cachePage, the following returns key
     return this.cachePages.get(key);
   }
-  //need to decide whether to include setElement in the abstract class as it raises error i LRU
+
   setElement(key: K, value: V) {
     return undefined;
   }

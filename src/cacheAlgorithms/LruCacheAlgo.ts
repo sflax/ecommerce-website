@@ -6,9 +6,9 @@ export class LruCacheAlgo<K, V> extends AbstractCacheAlgo<K, V> {
   cachePages: Map<K, V>; //to discuss if we prefer to work with objects instead of map
   //to consider double linked list implementation
   private keys: K[];
-
-  constructor(capcity: number) {
-    super(capcity);
+  
+  constructor(capacity: number) {
+    super(capacity);
     this.cachePages = new Map<K, V>();
     this.keys = [];
   }
