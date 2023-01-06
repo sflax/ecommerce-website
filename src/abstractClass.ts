@@ -5,7 +5,7 @@ export abstract class AbstractCacheAlgo<K, V> implements ICacheAlgo<K, V> {
   //to discuss whether cachePages should be excluded from the abstract or not
   cachePages: Map<K, V>;
 
-  constructor(capacity: number) {
+  constructor(capacity: number = 10) {
     this.capacity = capacity;
     this.cachePages = new Map<K, V>();
   }
