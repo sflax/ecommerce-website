@@ -33,4 +33,20 @@ export class LruCacheAlgo<K, V> extends AbstractCacheAlgo<K, V> {
   }
 
   //to complete setElement and implement removeElement in it
+  setElement(key: K, value: V): K | undefined {
+    //in case the key exists it will be removed and set again
+    if (this.cachePages.has(key)) {
+      this.removeElement(key);
+      this.setElement(key, value);
+    } else {
+      //if it doesn't exist and there is no capacity, the last item will be removed
+      if (this.keys.length >= this.capacity) {
+        const leastRecentKey = this.keys.shift();
+        this.cachePages.delete(leastRecentKey!);
+      }
+      this.keys.push(key);
+    }
+    this.cachePages.set(key, value);
+    return key;
+  }
 }
