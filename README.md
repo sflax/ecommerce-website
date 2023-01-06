@@ -11,3 +11,7 @@ opened index.ts
 Shchar
 tsc --init
 update tsconfig
+
+06.01.23
+npm install --save-dev ts-node
+update main branch
