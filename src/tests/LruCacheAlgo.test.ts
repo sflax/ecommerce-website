@@ -28,6 +28,6 @@ describe("LRU cache algo", () => {
     cache.setElement("key3", 3);
     expect(cache.getElement("key1")).to.equal(1); // Output: 1
     expect(cache.getElement("key2")).to.equal(2); // Output: 2
-    expect(cache.getElement("key3")).to.equal(3); // Output: 3
+    expect(cache.getElement("key3")).to.equal(3); // Output : 3
   });
 });
