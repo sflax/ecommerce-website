@@ -50,3 +50,27 @@ export class LruCacheAlgo<K, V> extends AbstractCacheAlgo<K, V> {
     return key;
   }
 }
+
+const testLruCapacity = 3;
+const cache = new LruCacheAlgo<string, number>(testLruCapacity);
+
+cache.setElement("key1", 1);
+cache.setElement("key2", 2);
+cache.setElement("key3", 3);
+
+console.log(cache.getElement("key1")); // Output: 1
+console.log(cache.getElement("key2")); // Output: 2
+console.log(cache.getElement("key3")); // Output: 3
+
+cache.setElement("key1", 4);
+
+console.log(cache.getElement("key1")); // Output: 4
+console.log(cache.getElement("key2")); // Output: 2
+console.log(cache.getElement("key3")); // Output: 3
+
+cache.setElement("key4", 5);
+
+console.log(cache.getElement("key1")); // Output: 4
+console.log(cache.getElement("key2")); // Output: 2
+console.log(cache.getElement("key3")); // Output: 3
+console.log(cache.getElement("key4")); // Output: 5
